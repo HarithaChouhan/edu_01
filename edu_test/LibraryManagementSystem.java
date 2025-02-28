@@ -1,13 +1,12 @@
 package edu_test;
+
 import java.util.Scanner;
 
-public class LibraryManagementSystem
-{
-    private static Library /;l.library = new Library(100, 100); // Maximum of 100 books and 100 members
+public class LibraryManagementSystem {
+    private static Library library = new Library(100, 100); // Maximum of 100 books and 100 members
     private static Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args)
-    {2
+    public static void main(String[] args) {
         initializeLibrary();
         int choice;
 
@@ -79,6 +78,7 @@ public class LibraryManagementSystem
         Member member = library.findMemberById(memberId);
         if (member != null) {
             library.borrowBook(isbn, member);
+            System.out.println("Book borrowed successfully!");
         } else {
             System.out.println("Member not found.");
         }
@@ -92,6 +92,7 @@ public class LibraryManagementSystem
         Member member = library.findMemberById(memberId);
         if (member != null) {
             library.returnBook(isbn, member);
+            System.out.println("Book returned successfully!");
         } else {
             System.out.println("Member not found.");
         }
